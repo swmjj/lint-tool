@@ -1,0 +1,47 @@
+// 配置说明：
+// https://www.cnblogs.com/hongdada/p/10118377.html
+// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+
+/**
+ * url 调试地址
+ * userDataDir 指定浏览器配置目录，建议在项目外新建目录，并长期使用，可安装开发用的chrome插件
+ * sourceMapPathOverrides source-map 地址映射，https://mp.weixin.qq.com/s/8T_VhpFiNe0wncdXo7C7xQ
+ */
+<%_ if(eslintType.indexOf('vue') > -1){ _%>
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}/src",
+            "userDataDir": "/Users/majunjie/Documents/chrome_dev_data",
+            "runtimeExecutable": "stable",
+            "sourceMapPathOverrides": {
+                "webpack://vue_test/*":"${workspaceFolder}/*",
+            }
+        }
+    ]
+    // vue 配置说明 https://vuejs.bootcss.com/cookbook/debugging-in-vscode.html
+}
+<%_ } _%>
+
+<%_ if(eslintType.indexOf('react') > -1){ _%>
+// react调试模板
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+          "type": "chrome",
+          "request": "launch",
+          "name": "Launch Chrome",
+          "url": "http://localhost:3000",
+           "userDataDir": "/Users/majunjie/Documents/chrome_dev_data",
+          "webRoot": "${workspaceFolder}/src",
+          "runtimeExecutable": "stable",
+        }
+    ]
+}
+<%_ } _%>

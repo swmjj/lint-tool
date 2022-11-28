@@ -1,0 +1,20 @@
+<%_ if (enableStylelint) {  _%>
+module.exports = {
+  extends: [
+    'stylelint-config-idiomatic-order',
+    'stylelint-config-ali',
+  ],
+  plugins: ['stylelint-order'],
+  // 如果是less预处理，可替换为postcss-less
+  customSyntax: "postcss-scss",
+  overrides: [
+    {
+      files: [`**/*.{vue,html,jsx}`],
+      customSyntax: 'postcss-html',
+    }
+  ],
+  rules:{
+    "selector-max-id":3
+  }
+};
+<%_ } _%>
